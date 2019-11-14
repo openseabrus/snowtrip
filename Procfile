@@ -1,1 +1,1 @@
-node snow.js
+worker: node snow.js
