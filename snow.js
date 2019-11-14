@@ -7,6 +7,9 @@ bot.command("stream", ctx => ctx.reply("https://stream.viddeon.com/borreguiles/b
 
 bot.on("text", ctx => {
 	const {from} = ctx;
+	console.log(ctx.message);
+	console.log("\n");
+	console.log("\n");
 	if (from === 'ctdwnbot') {
 		ctx.telegram.sendPhoto(ctx.chat.id, `https://sierranevada.es/_extras/fotos_camaras/mobotix/current.jpg?IPIGNORE=TRUE&timestamp=${Date.now()}`);
 	}
