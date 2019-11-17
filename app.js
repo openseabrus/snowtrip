@@ -4,8 +4,6 @@ const commands = require('./commands');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-commands.snow(bot);
-commands.stream(bot);
-commands.album(bot);
+Object.values(commands).map((command) => command(bot));
 
 bot.launch();

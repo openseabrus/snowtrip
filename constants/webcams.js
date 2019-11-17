@@ -5,3 +5,4 @@ exports.borreguilestaller = { type: 'photo', caption: 'Pista El Bosque y la Vise
 exports.tlcabinasup = { type: 'photo', caption: 'Linea Telecabina', media: 'https://sierranevada.es/_extras/fotos_camaras/tlcabinasup/sierranevada.jpg?IPIGNORE=TRUE&timestamp=' };
 exports.camaramsn = { type: 'photo', caption: 'Desde Meliá Sol y Nieve', media: 'https://sierranevada.es/_extras/fotos_camaras/camaramsn/MeliaSyN.jpg?IPIGNORE=TRUE&timestamp=' };
 exports.montebajo = { type: 'photo', caption: 'Zona Montebajo', media: 'https://sierranevada.es/_extras/fotos_camaras/montebajo/current.jpg?IPIGNORE=TRUE&timestamp=' };
+exports.road = 'http://infocar.dgt.es/etraffic/data/camaras/313.jpg?IPIGNORE=TRUE&timestamp=';

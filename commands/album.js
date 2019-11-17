@@ -5,10 +5,12 @@ const album = (app) => app.command(ALBUM, ({ reply, replyWithMediaGroup }) => {
 
   reply('Fetching webcams...');
 
-  const pictures = Object.values(webcams).map((webcam) => ({
-    ...webcam,
-    media: `${webcam.media}${now}`,
-  }));
+  const pictures = Object.values(webcams)
+    .filter((webcam) => !!webcam.type)
+    .map((webcam) => ({
+      ...webcam,
+      media: `${webcam.media}${now}`,
+    }));
 
   replyWithMediaGroup(pictures);
 });
