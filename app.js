@@ -6,5 +6,6 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 commands.snow(bot);
 commands.stream(bot);
+commands.album(bot);
 
 bot.launch();
