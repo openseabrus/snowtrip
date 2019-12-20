@@ -8,7 +8,7 @@ const weather = (app) => app.command(WEATHER, ({ reply }) => {
       const { data } = daily;
       const [today] = data;
       reply(
-        `Current weather in Sierra Nevada: ${currently.summary}
+        `Current weather in Sierra Nevada: ${currently.summary} ${currently.icon}
   - *Current Temperature* ${currently.temperature} C
   - *Apparent Temperature* ${currently.apparentTemperature} C
   - *Wind Speed* ${(currently.windSpeed * 3.6).toFixed(2)} km/h
