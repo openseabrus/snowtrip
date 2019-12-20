@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
-const { WEATHER, weather } = require('../constants');
+const { WEATHER, weather: weatherUrl } = require('../constants');
 
-const stream = (app) => app.command(WEATHER, ({ reply }) => {
-  fetch(weather)
+const weather = (app) => app.command(WEATHER, ({ reply }) => {
+  fetch(weatherUrl)
     .then((response) => response.json())
     .then(({ currently, daily }) => {
       const { data } = daily;
@@ -20,4 +20,4 @@ Additional information: ${daily.summary}
     });
 });
 
-module.exports = stream;
+module.exports = weather;
