@@ -5,6 +5,7 @@
   "main": "snow.js",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
     "telegraf": "^3.33.3"
   },
   "devDependencies": {

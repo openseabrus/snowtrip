@@ -1,1 +1,1 @@
-module.exports = 'https://samples.openweathermap.org/data/2.5/weather?q=Lisbon&appid=7460f311a2de17daa6ba87f98ecdeeef';
+module.exports = 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/37.054731,%20-3.368337?units=si';
