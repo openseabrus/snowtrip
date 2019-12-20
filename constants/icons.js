@@ -1,4 +1,4 @@
-exports.icons = {
+module.exports = {
   'clear-day': '☀️',
   'clear-night': '🌙',
   'partly-cloudy-day': '🌤',
