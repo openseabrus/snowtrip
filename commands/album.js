@@ -16,7 +16,6 @@ const album = (app) => app.command(ALBUM, async ({ reply, replyWithMediaGroup, d
   try {
     await replyWithMediaGroup(pictures);
   } catch (error) {
-    console.log(error);
     reply('Ooops, something went wrong 😥');
   }
   deleteMessage(messageId);
