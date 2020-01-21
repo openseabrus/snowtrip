@@ -5,3 +5,4 @@ exports.ROAD = 'road';
 exports.MAP = 'map';
 exports.WEATHER = 'weather';
 exports.OPENSLOPES = 'openslopes';
+exports.OPENSOURCE = 'opensource';

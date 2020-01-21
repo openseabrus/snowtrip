@@ -13,7 +13,11 @@ const album = (app) => app.command(ALBUM, async ({ reply, replyWithMediaGroup, d
       media: `${webcam.media}${now}`,
     }));
 
-  await replyWithMediaGroup(pictures);
+  try {
+    await replyWithMediaGroup(pictures);
+  } catch (error) {
+    reply('Ooops, something went wrong 😥');
+  }
   deleteMessage(messageId);
 });
 
