@@ -1,5 +1,5 @@
 exports.sierranevada = {
-  caption: '🇪🇸Sierra Nevada stream',
+  caption: '🇪🇸Sierra Nevada',
   stream: 'https://stream.viddeon.com/borreguiles/borreguiles.m3u8',
   webcams: [{
     type: 'photo',
@@ -44,7 +44,7 @@ exports.sierranevada = {
   ],
 };
 exports.schmitten = {
-  caption: '🇦🇹Schmitten stream',
+  caption: '🇦🇹Schmitten',
   stream: 'https://s1.live-panorama.com/keblivestreaming/streams/schmittenTVLow.sdp.stream.m3u8',
   webcams: [
     {
