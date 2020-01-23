@@ -2,7 +2,7 @@ const { Markup } = require('telegraf');
 const { STREAM, resorts } = require('../constants');
 
 const replyStream = (app, resort) => {
-  app.action(resort.name, ({ editMessageText, reply }) => {
+  app.action(resort.caption, ({ editMessageText, reply }) => {
     editMessageText(STREAM,
       reply(resort.stream));
   });
@@ -14,8 +14,8 @@ const stream = (app) => app.command(STREAM, ({ reply }) => {
 
   return reply(STREAM,
     Markup.inlineKeyboard([
-      Markup.callbackButton(resorts.schmitten.name, resorts.schmitten.name),
-      Markup.callbackButton(resorts.sierranevada.name, resorts.sierranevada.name),
+      Markup.callbackButton(resorts.schmitten.caption, resorts.schmitten.caption),
+      Markup.callbackButton(resorts.sierranevada.caption, resorts.sierranevada.caption),
     ]).extra());
 });
 
