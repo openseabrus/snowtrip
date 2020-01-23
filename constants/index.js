@@ -5,3 +5,4 @@ module.exports.weather = require('./weather');
 module.exports.icons = require('./icons');
 module.exports.openslopes = require('./openslopes');
 module.exports.opensource = require('./opensource');
+module.exports.resorts = require('./resorts');
