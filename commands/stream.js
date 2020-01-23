@@ -1,16 +1,16 @@
 const { Markup } = require('telegraf');
 const { STREAM, resorts } = require('../constants');
 
-const stream = (app) => app.command(STREAM, ({ reply }) => {
-  app.action(resorts.schmitten.name, ({ editMessageText }) => {
+const replyStream = (app, resort) => {
+  app.action(resort.name, ({ editMessageText, reply }) => {
     editMessageText(STREAM,
-      reply(resorts.schmitten.stream));
+      reply(resort.stream));
   });
+};
 
-  app.action(resorts.sierranevada.name, ({ editMessageText }) => {
-    editMessageText(STREAM,
-      reply(resorts.sierranevada.stream));
-  });
+const stream = (app) => app.command(STREAM, ({ reply }) => {
+  replyStream(app, resorts.sierranevada);
+  replyStream(app, resorts.schmitten);
 
   return reply(STREAM,
     Markup.inlineKeyboard([
