@@ -1,21 +1,21 @@
 const { Markup } = require('telegraf');
-const { STREAM } = require('../constants');
+const { STREAM, resorts } = require('../constants');
 
 const stream = (app) => app.command(STREAM, ({ reply }) => {
-  app.action('🇦🇹Schmitten stream', ({ editMessageText }) => {
+  app.action(resorts.schmitten.name, ({ editMessageText }) => {
     editMessageText(STREAM,
-      reply('https://s1.live-panorama.com/keblivestreaming/streams/schmittenTVLow.sdp.stream.m3u8'));
+      reply(resorts.schmitten.stream));
   });
 
-  app.action('🇪🇸Sierra Nevada stream', ({ editMessageText }) => {
+  app.action(resorts.sierranevada.name, ({ editMessageText }) => {
     editMessageText(STREAM,
-      reply('https://stream.viddeon.com/borreguiles/borreguiles.m3u8'));
+      reply(resorts.sierranevada.stream));
   });
 
   return reply(STREAM,
     Markup.inlineKeyboard([
-      Markup.callbackButton('🇦🇹Schmitten stream', '🇦🇹Schmitten stream'),
-      Markup.callbackButton('🇪🇸Sierra Nevada stream', '🇪🇸Sierra Nevada stream'),
+      Markup.callbackButton(resorts.schmitten.name, resorts.schmitten.name),
+      Markup.callbackButton(resorts.sierranevada.name, resorts.sierranevada.name),
     ]).extra());
 });
 
