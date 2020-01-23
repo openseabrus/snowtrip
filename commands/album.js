@@ -1,7 +1,7 @@
 const { Markup } = require('telegraf');
 const { ALBUM, resorts } = require('../constants');
 
-async function extracted(reply, replyWithMediaGroup, deleteMessage, webcams) {
+async function replyAlbum(reply, replyWithMediaGroup, deleteMessage, webcams) {
   const now = Date.now();
 
   const fetchingId = await reply('Fetching webcams...');
@@ -21,18 +21,18 @@ async function extracted(reply, replyWithMediaGroup, deleteMessage, webcams) {
   }
   deleteMessage(messageId);
 }
-const replyAlbum = (app, resort) => {
+const registerAlbumAction = (app, resort) => {
   app.action(resort.caption, async ({
     editMessageText, reply, replyWithMediaGroup, deleteMessage,
   }) => {
     editMessageText(ALBUM,
-      await extracted(reply, replyWithMediaGroup, deleteMessage, resort.webcams));
+      await replyAlbum(reply, replyWithMediaGroup, deleteMessage, resort.webcams));
   });
 };
 
 const album = (app) => app.command(ALBUM, ({ reply }) => {
-  replyAlbum(app, resorts.sierranevada);
-  replyAlbum(app, resorts.schmitten);
+  registerAlbumAction(app, resorts.sierranevada);
+  registerAlbumAction(app, resorts.schmitten);
 
   return reply(ALBUM,
     Markup.inlineKeyboard([
