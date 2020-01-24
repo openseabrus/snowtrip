@@ -8,7 +8,7 @@ async function extracted(reply, replyWithMediaGroup, deleteMessage, webcams) {
   const { message_id: messageId } = fetchingId;
 
   const pictures = webcams
-    .filter((webcam) => !!webcam.type)
+    .filter((webcam) => webcam.type === 'photo')
     .map((webcam) => ({
       ...webcam,
       media: `${webcam.media}${now}`,
