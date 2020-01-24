@@ -1,30 +1,33 @@
 const { Markup } = require('telegraf');
+const uuidv5 = require('uuid/v5');
 const { VIDEOS, resorts } = require('../constants');
 
 async function extracted(reply, replyWithVideo, deleteMessage, webcams) {
   const fetchingId = await reply('Fetching videos...');
   const { message_id: messageId } = fetchingId;
-
   const filteredVideos = webcams
-    .filter((webcam) => webcam.type === 'video')
-    .map((webcam) => ({
-      ...webcam,
-      media: `${webcam.media}`,
-    }));
-
-  try {
-    await replyWithVideo(filteredVideos);
-  } catch (error) {
-    reply('Ooops, something went wrong 😥');
+    .filter((webcam) => webcam.type === 'video');
+  // eslint-disable-next-line no-restricted-syntax
+  for await (const video of filteredVideos) {
+    const videoFilename = `${uuidv5.URL}.mp4`;
+    try {
+      await replyWithVideo({
+        url: video.media,
+        filename: videoFilename,
+      });
+    } catch (error) {
+      reply('Ooops, something went wrong 😥');
+    }
   }
   deleteMessage(messageId);
 }
+
 const replyVIDEOS = (app, resort) => {
   app.action(resort.caption + VIDEOS, async ({
-    editMessageText, reply, replyWithMediaGroup, deleteMessage,
+    editMessageText, reply, replyWithVideo, deleteMessage,
   }) => {
     editMessageText(VIDEOS,
-      await extracted(reply, replyWithMediaGroup, deleteMessage, resort.webcams));
+      await extracted(reply, replyWithVideo, deleteMessage, resort.webcams));
   });
 };
 
