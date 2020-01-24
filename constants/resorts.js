@@ -1,6 +1,10 @@
 exports.sierranevada = {
   caption: '🇪🇸Sierra Nevada',
   stream: 'https://stream.viddeon.com/borreguiles/borreguiles.m3u8',
+  lat: '37.054731',
+  long: '-3.368337',
+  weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/37.054731,%20-3.368337?units=si',
+  map: 'https://media.skigebiete-test.de/images/ecu/entity/e_skiresort/ski-resort_sierra-nevada_n5038-22032-0_raw.jpg',
   webcams: [{
     type: 'photo',
     caption: 'Pradollano 2.100 m',
@@ -45,6 +49,10 @@ exports.sierranevada = {
 };
 exports.schmitten = {
   caption: '🇦🇹Schmitten',
+  lat: '47.4113',
+  long: '12.851',
+  weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/47.4113,%2012.851?units=si',
+  map: 'https://media.skigebiete-test.de/images/ecu/entity/e_skiresort/ski-resort_schmittenhoehe_n3085-153507-1_raw.jpg',
   stream: 'https://s1.live-panorama.com/keblivestreaming/streams/schmittenTVLow.sdp.stream.m3u8',
   webcams: [
     {
