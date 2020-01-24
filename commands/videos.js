@@ -34,7 +34,6 @@ const videos = (app) => app.command(VIDEOS, ({ reply }) => {
   return reply(VIDEOS,
     Markup.inlineKeyboard([
       Markup.callbackButton(resorts.schmitten.caption, resorts.schmitten.caption + VIDEOS),
-      Markup.callbackButton(resorts.sierranevada.caption, resorts.sierranevada.caption + VIDEOS),
     ]).oneTime().extra());
 });
 
