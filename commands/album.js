@@ -1,12 +1,13 @@
-const { ALBUM, webcams } = require('../constants');
+const { Markup } = require('telegraf');
+const { ALBUM, resorts } = require('../constants');
 
-const album = (app) => app.command(ALBUM, async ({ reply, replyWithMediaGroup, deleteMessage }) => {
+async function extracted(reply, replyWithMediaGroup, deleteMessage, webcams) {
   const now = Date.now();
 
   const fetchingId = await reply('Fetching webcams...');
   const { message_id: messageId } = fetchingId;
 
-  const pictures = Object.values(webcams)
+  const pictures = webcams
     .filter((webcam) => !!webcam.type)
     .map((webcam) => ({
       ...webcam,
@@ -19,6 +20,25 @@ const album = (app) => app.command(ALBUM, async ({ reply, replyWithMediaGroup, d
     reply('Ooops, something went wrong 😥');
   }
   deleteMessage(messageId);
+}
+const replyAlbum = (app, resort) => {
+  app.action(resort.caption + ALBUM, async ({
+    editMessageText, reply, replyWithMediaGroup, deleteMessage,
+  }) => {
+    editMessageText(ALBUM,
+      await extracted(reply, replyWithMediaGroup, deleteMessage, resort.webcams));
+  });
+};
+
+const album = (app) => app.command(ALBUM, ({ reply }) => {
+  replyAlbum(app, resorts.sierranevada);
+  replyAlbum(app, resorts.schmitten);
+
+  return reply(ALBUM,
+    Markup.inlineKeyboard([
+      Markup.callbackButton(resorts.schmitten.caption, resorts.schmitten.caption + ALBUM),
+      Markup.callbackButton(resorts.sierranevada.caption, resorts.sierranevada.caption + ALBUM),
+    ]).oneTime().extra());
 });
 
 module.exports = album;
