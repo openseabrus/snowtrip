@@ -23,11 +23,11 @@ async function extracted(reply, replyWithVideo, deleteMessage, webcams) {
 }
 
 const replyVIDEOS = (app, resort) => {
-  app.action(resort.caption + VIDEOS, async ({
+  app.action(resort.caption + VIDEOS, ({
     editMessageText, reply, replyWithVideo, deleteMessage,
   }) => {
     editMessageText(VIDEOS,
-      await extracted(reply, replyWithVideo, deleteMessage, resort.webcams));
+      extracted(reply, replyWithVideo, deleteMessage, resort.webcams));
   });
 };
 
