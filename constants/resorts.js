@@ -82,5 +82,10 @@ exports.schmitten = {
       caption: 'Webcam areitXpress mountain station',
       media: 'http://portal.live-panorama.com/webcam_schmitten_feuerstuhl_hd.jpg',
     },
+    {
+      type: 'video',
+      caption: 'Webcam Schmittenhöhe',
+      media: 'https://portal.live-panorama.com/schmitten/schmitten_berg.mp4',
+    },
   ],
 };
