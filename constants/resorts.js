@@ -94,11 +94,13 @@ exports.schmitten = {
       type: 'video',
       caption: 'Webcam Schmittenhöhe',
       media: 'https://portal.live-panorama.com/schmitten/schmitten_berg.mp4',
+      thumb: 'https://portal.live-panorama.com/webcam_schmitten_schmitten_hd.jpg',
     },
     {
       type: 'video',
       caption: 'Webcam Sonnkogel',
       media: 'https://portal.live-panorama.com/schmitten/schmitten_sonnkogel.mp4',
+      thumb: 'https://portal.live-panorama.com/webcam_schmitten_sonnkogel_hd.jpg',
     },
   ],
 };
