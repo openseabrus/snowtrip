@@ -104,3 +104,33 @@ exports.schmitten = {
     },
   ],
 };
+exports.serradaestrela = {
+  caption: '🇵🇹Serra da Estrela',
+  lat: '40.323',
+  long: '-7.596',
+  weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/40.323,%20-7.596?units=si',
+  map: 'https://www.snow-forecast.com/pistemaps/Serra-da-Estrela_pistemap.jpg',
+  stream: 'https://youtu.be/typBARGfOhA',
+  webcams: [
+    {
+      type: 'photo',
+      caption: 'Torre',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_2.jpg',
+    },
+    {
+      type: 'photo',
+      caption: 'Penhas',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_3.jpg',
+    },
+    {
+      type: 'photo',
+      caption: 'Penhas 2',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_4.jpg',
+    },
+    {
+      type: 'photo',
+      caption: 'Covilhã',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_1.jpg',
+    },
+  ],
+};

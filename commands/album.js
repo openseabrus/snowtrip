@@ -33,6 +33,7 @@ const replyAlbum = (app, resort) => {
 const album = (app) => app.command(ALBUM, ({ reply }) => {
   replyAlbum(app, resorts.sierranevada);
   replyAlbum(app, resorts.schmitten);
+  replyAlbum(app, resorts.serradaestrela);
 
   return reply(ALBUM,
     Markup.inlineKeyboard([
