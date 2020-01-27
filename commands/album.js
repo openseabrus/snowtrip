@@ -35,6 +35,7 @@ const album = (app) => app.command(ALBUM, ({ reply }) => {
   replyAlbum(app, resorts.schmitten);
   replyAlbum(app, resorts.serradaestrela);
   replyAlbum(app, resorts.bejar);
+  replyAlbum(app, resorts.pasdelacasa);
 
   return reply(ALBUM,
     Markup.inlineKeyboard([
@@ -42,6 +43,7 @@ const album = (app) => app.command(ALBUM, ({ reply }) => {
       Markup.callbackButton(resorts.sierranevada.caption, resorts.sierranevada.caption + ALBUM),
       Markup.callbackButton(resorts.serradaestrela.caption, resorts.serradaestrela.caption + ALBUM),
       Markup.callbackButton(resorts.bejar.caption, resorts.bejar.caption + ALBUM),
+      Markup.callbackButton(resorts.pasdelacasa.caption, resorts.pasdelacasa.caption + ALBUM),
     ]).oneTime().extra());
 });
 
