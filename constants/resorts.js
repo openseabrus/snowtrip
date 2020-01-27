@@ -115,22 +115,22 @@ exports.serradaestrela = {
     {
       type: 'photo',
       caption: 'Torre',
-      media: 'https://www.meteoestrela.pt/assets/webcam/cam_2.jpg',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_2.jpg?timestamp=',
     },
     {
       type: 'photo',
       caption: 'Penhas',
-      media: 'https://www.meteoestrela.pt/assets/webcam/cam_3.jpg',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_3.jpg?timestamp=',
     },
     {
       type: 'photo',
       caption: 'Penhas 2',
-      media: 'https://www.meteoestrela.pt/assets/webcam/cam_4.jpg',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_4.jpg?timestamp=',
     },
     {
       type: 'photo',
-      caption: 'Covilhã',
-      media: 'https://www.meteoestrela.pt/assets/webcam/cam_1.jpg',
+      caption: 'Covilha',
+      media: 'https://www.meteoestrela.pt/assets/webcam/cam_1.jpg?timestamp=',
     },
   ],
 };
