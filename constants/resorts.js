@@ -134,3 +134,33 @@ exports.serradaestrela = {
     },
   ],
 };
+exports.bejar = {
+  caption: '🇪🇸Béjar',
+  lat: '40.323',
+  long: '-7.596',
+  weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/40.323,%20-7.596?units=si',
+  map: 'http://www.sierradebejar-lacovatilla.com/imagenes/mapa2011.jpg',
+  stream: 'https://youtu.be/typBARGfOhA',
+  webcams: [
+    {
+      type: 'photo',
+      caption: 'Debutantes',
+      media: 'http://www.sierradebejar-lacovatilla.com/webcam/webcam1.jpg?timestamp=',
+    },
+    {
+      type: 'photo',
+      caption: 'El Regajo de las Mulas',
+      media: 'http://www.sierradebejar-lacovatilla.com/webcam/webcam2.jpg?timestamp=',
+    },
+    {
+      type: 'photo',
+      caption: 'Serenitas',
+      media: 'http://www.sierradebejar-lacovatilla.com/webcam/webcam3.jpg?timestamp=',
+    },
+    {
+      type: 'photo',
+      caption: 'El Cerrojo',
+      media: 'http://www.sierradebejar-lacovatilla.com/webcam/webcam4.jpg?timestamp=',
+    },
+  ],
+};

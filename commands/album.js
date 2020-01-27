@@ -17,7 +17,6 @@ async function extracted(reply, replyWithMediaGroup, deleteMessage, webcams) {
   try {
     await replyWithMediaGroup(pictures);
   } catch (error) {
-    console.log(error)
     reply('Ooops, something went wrong 😥');
   }
   deleteMessage(messageId);
@@ -35,12 +34,14 @@ const album = (app) => app.command(ALBUM, ({ reply }) => {
   replyAlbum(app, resorts.sierranevada);
   replyAlbum(app, resorts.schmitten);
   replyAlbum(app, resorts.serradaestrela);
+  replyAlbum(app, resorts.bejar);
 
   return reply(ALBUM,
     Markup.inlineKeyboard([
       Markup.callbackButton(resorts.schmitten.caption, resorts.schmitten.caption + ALBUM),
       Markup.callbackButton(resorts.sierranevada.caption, resorts.sierranevada.caption + ALBUM),
       Markup.callbackButton(resorts.serradaestrela.caption, resorts.serradaestrela.caption + ALBUM),
+      Markup.callbackButton(resorts.bejar.caption, resorts.bejar.caption + ALBUM),
     ]).oneTime().extra());
 });
 
