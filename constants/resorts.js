@@ -5,6 +5,16 @@ exports.sierranevada = {
   long: '-3.368337',
   weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/37.054731,%20-3.368337?units=si',
   map: 'https://media.skigebiete-test.de/images/ecu/entity/e_skiresort/ski-resort_sierra-nevada_n5038-22032-0_raw.jpg',
+  openslopes: {
+    url: 'https://web.sierranevada.es/es/invierno/la-estaci%C3%B3n/parte-nieve/',
+    slopes: 'div.grey:nth-child(4) > div:nth-child(2) > div:nth-child(2)',
+    dataText: 'data-text',
+    dataInfo: 'data-info',
+    lifts: 'div.grey:nth-child(4) > div:nth-child(1) > div:nth-child(2)',
+    distance: 'div.big-padding:nth-child(3) > div:nth-child(3) > p:nth-child(1) > span:nth-child(2) > strong:nth-child(1)',
+    date: 'div.grey:nth-child(5) > div:nth-child(1) > p:nth-child(1)',
+    state: 'div.miniPanel:nth-child(1) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1)',
+  },
   webcams: [{
     type: 'photo',
     caption: 'Pradollano 2.100 m',
@@ -53,6 +63,9 @@ exports.schmitten = {
   long: '12.851',
   weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/47.4113,%2012.851?units=si',
   map: 'https://media.skigebiete-test.de/images/ecu/entity/e_skiresort/ski-resort_schmittenhoehe_n3085-153507-1_raw.jpg',
+  openslopes: {
+    url: 'https://winter.intermaps.com/zell_am_see/data?lang=en',
+  },
   stream: 'https://s1.live-panorama.com/keblivestreaming/streams/schmittenTVLow.sdp.stream.m3u8',
   webcams: [
     {
