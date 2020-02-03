@@ -7,3 +7,4 @@ exports.WEATHER = 'weather';
 exports.OPENSLOPES = 'openslopes';
 exports.OPENSOURCE = 'opensource';
 exports.WEED = 'weed';
+exports.VIDEOS = 'videos';

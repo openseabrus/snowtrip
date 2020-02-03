@@ -7,3 +7,4 @@ module.exports.weather = require('./weather');
 module.exports.openslopes = require('./openslopes');
 module.exports.opensource = require('./opensource');
 module.exports.weed = require('./weed');
+module.exports.videos = require('./videos');
