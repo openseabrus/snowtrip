@@ -124,6 +124,15 @@ exports.serradaestrela = {
   weatherUrl: 'https://api.darksky.net/forecast/6bdcf525602d6b529b1e07ae0d82af0e/40.323,%20-7.596?units=si',
   map: 'https://www.snow-forecast.com/pistemaps/Serra-da-Estrela_pistemap.jpg',
   stream: 'https://youtu.be/typBARGfOhA',
+  openslopes: {
+    url: 'http://www.skiserradaestrela.com',
+    date: '#pistasatualizado',
+    state: '#blcobs > p',
+    markedSlopes: '.pbalisada',
+    openedMarkedSlopes: '.aberto.pbalisada',
+    naturalSlopes: ' .ppnatural',
+    openedNaturalSlopes: 'aberto.ppnatural',
+  },
   webcams: [
     {
       type: 'photo',

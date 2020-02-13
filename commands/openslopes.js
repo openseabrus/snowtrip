@@ -49,6 +49,44 @@ _${date}_
       { parse_mode: 'Markdown' });
     });
 };
+const openSlopesSerraDaEstrelaHandler = (resort, reply) => {
+  const {
+    url,
+    date: dateScrape,
+    state: stateScrape,
+    markedSlopes,
+    openedMarkedSlopes,
+    naturalSlopes,
+    openedNaturalSlopes,
+  } = resort.openslopes;
+  fetch(url)
+    .then((response) => response.text())
+    .then((html) => {
+      const $ = cheerio.load(html);
+
+      const totalMarkedSlopes = $(markedSlopes).get().length;
+      const totalOpenedMarkedSlopes = $(openedMarkedSlopes).get().length;
+
+      const totalNaturalSlopes = $(naturalSlopes).get().length;
+      const totalOpenedNaturalSlopes = $(openedNaturalSlopes).get().length;
+
+      const date = $(dateScrape)
+        .text();
+      const state = $(stateScrape)
+        .text()
+        .trim();
+
+      reply(`*Slope report state - ${resort.caption}*
+*Status:* ${state}
+
+*Marked Slopes:* ${totalOpenedMarkedSlopes}/${totalMarkedSlopes}
+*Natural Slopes:* ${totalOpenedNaturalSlopes}/${totalNaturalSlopes}
+
+_${date}_
+`,
+      { parse_mode: 'Markdown' });
+    });
+};
 
 const openSlopesSchmittenHandler = (resort, reply) => {
   const {
@@ -95,6 +133,8 @@ const openSlopesHandler = (resort, reply) => {
       return openSlopesSierraNevadaHandler(resort, reply);
     case resorts.schmitten.caption:
       return openSlopesSchmittenHandler(resort, reply);
+    case resorts.serradaestrela.caption:
+      return openSlopesSerraDaEstrelaHandler(resort, reply);
     default:
       return reply('No handler defined. try /opensource to contribute');
   }
@@ -110,11 +150,14 @@ const replyOpenSlopes = (app, resort) => {
 const openslopes = (app) => app.command(OPENSLOPES, ({ reply }) => {
   replyOpenSlopes(app, resorts.sierranevada);
   replyOpenSlopes(app, resorts.schmitten);
+  replyOpenSlopes(app, resorts.serradaestrela);
   return reply(OPENSLOPES,
     Markup.inlineKeyboard([
       Markup.callbackButton(resorts.schmitten.caption, resorts.schmitten.caption + OPENSLOPES),
       Markup.callbackButton(resorts.sierranevada.caption,
         resorts.sierranevada.caption + OPENSLOPES),
+      Markup.callbackButton(resorts.serradaestrela.caption,
+        resorts.serradaestrela.caption + OPENSLOPES),
     ]).oneTime().extra());
 });
 
